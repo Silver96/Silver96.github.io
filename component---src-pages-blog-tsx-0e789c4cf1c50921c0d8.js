@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"1GPU":function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return c}));var a=t("q1tI"),o=t.n(a),r=t("soUV"),u=t("hizP");function c(n){var e=n.path;return o.a.createElement(r.a,{path:e},o.a.createElement(u.a,null),o.a.createElement("h2",null,"Coming soon"))}}}]);
+//# sourceMappingURL=component---src-pages-blog-tsx-0e789c4cf1c50921c0d8.js.map
