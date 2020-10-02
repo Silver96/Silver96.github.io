@@ -14,7 +14,7 @@ import Footer from './Footer';
 import { GlobalStateContext } from './NightModeToggle';
 
 export default function Layout({ children, path }: PageProps) {
-    const [nightMode, setNightMode] = useState(localStorage.getItem('night-mode-enabled') !== 'false' || false);
+    const [nightMode, setNightMode] = useState(typeof window !== 'undefined' ? localStorage.getItem('night-mode-enabled') !== 'false' || false : true);
 
     return (
         <GlobalStateContext.Provider value={{ nightMode, setNightMode }}>
