@@ -1,0 +1,53 @@
+
+body {
+  background-color: theme('colors.white');
+  color: theme('colors.black');
+  transition: color var(--night-mode-transition), background-color var(--night-mode-transition);
+}
+
+body.night {
+  background-color: theme('colors.black');
+  color: theme('colors.white');
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  position: relative;
+}
+
+a {
+  color: theme('colors.accent.600');
+
+  &:hover {
+    color: theme('colors.accent.700');
+  }
+}
+
+body.night a {
+  color: theme('colors.accent.500');
+  &:hover {
+    color: theme('colors.accent.300');
+  }
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

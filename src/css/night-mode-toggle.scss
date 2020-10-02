@@ -1,0 +1,68 @@
+:root {
+  --night-mode-transition: 0.3s ease-in-out;
+}
+
+.night-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0.5rem;
+  max-width: 200px;
+  z-index: 1;
+  cursor: pointer;
+
+
+  input[type="checkbox"] {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+
+    &:focus + label {
+      box-shadow: 0 2px 4px 0 #8e8e8e;
+      border-color: #5a5a5a;
+    }
+
+    & + label {
+      display: inline-block;
+      position: relative;
+      height: 1.5rem;
+      width: 3.5rem;
+      border: 2px solid #afafaf;
+      background: #cecece;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      z-index: 1;
+      transition: border-color var(--night-mode-transition), box-shadow var(--night-mode-transition);
+
+      &::before {
+        content: '';
+        background-image: url('/sun.png');
+        background-size: 1.2rem;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 1.2rem;
+        width: 1.2rem;
+        margin: auto 0.1rem;
+        z-index: 3;
+        transition: left var(--night-mode-transition);
+      }
+    }
+
+    &:checked + label::before {
+      content: '';
+      background-image: url('/night.png');
+      left: calc(100% - 1.5rem);
+    }
+  }
+}
+
+body.night input[type="checkbox"]:focus + label {
+  box-shadow: 0 2px 4px 0 #959595;
+  border-color: #737c7f;
+}
