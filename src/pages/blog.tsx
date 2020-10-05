@@ -5,7 +5,7 @@ import { PageProps } from 'gatsby';
 
 export default function Blog({path}: PageProps) {
     return (
-        <Layout path={path}>
+        <Layout path={path} centered>
             <SEO/>
             <h2>Coming soon</h2>
         </Layout>

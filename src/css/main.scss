@@ -3,35 +3,44 @@ body {
   background-color: theme('colors.white');
   color: theme('colors.black');
   transition: color var(--night-mode-transition), background-color var(--night-mode-transition);
-}
 
-body.night {
-  background-color: theme('colors.black');
-  color: theme('colors.white');
+  &.night {
+    background-color: theme('colors.black');
+    color: theme('colors.white');
+  }
 }
 
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   position: relative;
 }
 
 a {
-  color: theme('colors.accent.600');
+  color: theme('colors.accent.700');
+  outline: 0;
 
   &:hover {
-    color: theme('colors.accent.700');
+    color: theme('colors.accent.900');
   }
-}
 
-body.night a {
-  color: theme('colors.accent.500');
-  &:hover {
-    color: theme('colors.accent.300');
+  @include night {
+    color: theme('colors.accent.500');
+
+    &:hover {
+      color: theme('colors.accent.300');
+    }
   }
+
+  &:focus {
+    text-shadow: 2px 1px 2px #7390b5;
+
+    @include night {
+      text-shadow: 2px 1px 2px #34d4ee;
+    }
+  }
+
+  transition: color var(--night-mode-transition), text-shadow var(--night-mode-transition);
 }
 
 .blinking-cursor {
@@ -49,5 +58,56 @@ body.night a {
 
   100% {
     opacity: 0;
+  }
+}
+
+.tag {
+  @apply px-2 py-1 rounded-lg border-2 border-black mr-2 my-2 text-sm;
+  transition: border-color var(--night-mode-transition);
+
+  @screen md {
+    @apply px-4;
+  }
+
+  @include night {
+    @apply border-white;
+  }
+}
+
+.bg-shape {
+  position: absolute;
+  right: -10vh;
+
+  top: 5vh;
+
+  height: 70vh;
+  width: 120vw;
+
+  @screen md {
+    width: 85vw;
+  }
+
+  @screen lg {
+    height: 84vh;
+  }
+
+  z-index: -1;
+  border-radius: 85% 15% 27% 73% / 86% 58% 42% 14%;
+  background-image: radial-gradient(#d9e1ee 15%, transparent 16%), radial-gradient(#d2d5d9 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+
+  @include night {
+    background-image: radial-gradient(#24282f 15%, transparent 16%), radial-gradient(#1f2933 15%, transparent 16%);
+  }
+
+  transition: background-image var(--night-mode-transition);
+}
+
+.mail {
+  color: theme('colors.gray.600');
+
+  @include night {
+    color: theme('colors.gray.200');
   }
 }

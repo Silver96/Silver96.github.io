@@ -1,0 +1,20 @@
+.not-found {
+  @apply absolute;
+  top: -50vh;
+  left: -13vw;
+  font-size: 65vh;
+  z-index: -1;
+  color: darken(#eaeaea, 10%);
+
+  &::first-letter {
+    color: darken(#eaeaea, 20%);
+  }
+
+  @include night {
+    color: lighten(#101318, 10%);
+
+    &::first-letter {
+      color: lighten(#101318, 20%);
+    }
+  }
+}

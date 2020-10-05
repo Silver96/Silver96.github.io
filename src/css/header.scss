@@ -1,13 +1,33 @@
-.fade-in {
-  animation: fadeIn 0.5s linear;
+.hamburger {
+  width: 30px;
+  height: 30px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+.hamburger div {
+  &::before, &::after {
+    content: '';
   }
 
-  100% {
-    opacity: 1;
+  &, &::before, &::after {
+    @apply bg-black;
+
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    bottom: 5px;
+    left: 0;
+    position: absolute;
+  }
+
+  .night &, .night &::before, .night &::after {
+    @apply bg-white;
+  }
+
+  &::before {
+    bottom: 16px;
+  }
+
+  &::after {
+    bottom: 8px;
   }
 }

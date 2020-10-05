@@ -13,7 +13,7 @@ export default function NightModeToggle({ value, setter }: { value: boolean, set
     };
 
     return (<label htmlFor="night-mode-check" className="night-mode-toggle">
-        Night mode
+        <span className="hidden md:block">Night Mode</span>
         <input id="night-mode-check" type="checkbox"
                checked={value}
                onChange={() => toggleNightMode()}

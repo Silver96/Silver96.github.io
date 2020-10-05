@@ -30,17 +30,17 @@ export default function Header(props: DataProps) {
     return (
         <GlobalStateContext.Consumer>
             {({ nightMode, setNightMode }) => {
-                return <header className="flex justify-between items-center px-8 py-4">
+                return <header className="flex justify-between items-center px-4 md:px-8 py-4">
                     <pre className="header-home">
                     <Link to={'/'}>
                         <span>asilvestroni</span>
-                        <span>@</span>
-                        <span>dev</span>
+                        <span className="text-red-400">@</span>
+                        <span className="text-yellow-600">dev</span>
                     </Link>
                         :{props.path} <span className="blinking-cursor">|</span>
                     </pre>
                     <div className="flex">
-                        <ul className="flex items-center">
+                        <ul className="hidden md:flex items-center">
                             {
                                 site.siteMetadata.nav.map(l => {
                                     return (
@@ -51,7 +51,12 @@ export default function Header(props: DataProps) {
                                 })
                             }
                         </ul>
-                        <NightModeToggle value={nightMode} setter={setNightMode}/>
+                        <div className="flex-row-reverse flex">
+                            <button className="block md:hidden relative hamburger" tabIndex="0">
+                                <div/>
+                            </button>
+                            <NightModeToggle value={nightMode} setter={setNightMode}/>
+                        </div>
                     </div>
                 </header>;
             }}

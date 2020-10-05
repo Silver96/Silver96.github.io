@@ -21,8 +21,13 @@
     clip: rect(1px, 1px, 1px, 1px);
 
     &:focus + label {
-      box-shadow: 0 2px 4px 0 #8e8e8e;
+      box-shadow: 0 2px 4px 0 #7390b5;
       border-color: #5a5a5a;
+
+      @include night {
+        box-shadow: 0 2px 4px 0 #34d4ee;
+        border-color: #737c7f;
+      }
     }
 
     & + label {
@@ -60,9 +65,4 @@
       left: calc(100% - 1.5rem);
     }
   }
-}
-
-body.night input[type="checkbox"]:focus + label {
-  box-shadow: 0 2px 4px 0 #959595;
-  border-color: #737c7f;
 }
