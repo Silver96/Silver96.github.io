@@ -100,8 +100,6 @@ a {
   @include night {
     background-image: radial-gradient(#24282f 15%, transparent 16%), radial-gradient(#1f2933 15%, transparent 16%);
   }
-
-  transition: background-image var(--night-mode-transition);
 }
 
 .mail {

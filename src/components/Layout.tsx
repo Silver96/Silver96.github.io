@@ -25,7 +25,7 @@ export default function Layout({ children, path, centered }: PageProps & LayoutP
             <Helmet bodyAttributes={{ class: nightMode ? 'night' : '' }}/>
             <div className="min-h-screen flex flex-col">
                 <Header path={path ?? '/'}/>
-                <main className={`flex-1 relative w-screen overflow-hidden${centered ? ' justify-center items-center' : ''}`}>
+                <main className={`flex-1 relative w-screen overflow-hidden ${centered ? ' justify-center items-center' : ''}`}>
                     <div className="max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg px-8 mx-auto">
                         {children}
                     </div>
