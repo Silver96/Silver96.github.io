@@ -1,20 +1,30 @@
 .not-found {
-  @apply absolute;
-  top: -50vh;
-  left: -13vw;
-  font-size: 65vh;
   z-index: -1;
+  position: absolute;
+  display: inline-block;
+  transform: rotate(-90deg);
+  top: 4rem;
+  right: -8rem;
+  font-size: 20rem;
+
+  @screen md {
+    font-size: 30rem;
+  }
+
   color: darken(#eaeaea, 10%);
 
-  &::first-letter {
+  & > span {
     color: darken(#eaeaea, 20%);
+    transition: color var(--night-mode-transition);
   }
 
   @include night {
     color: lighten(#101318, 10%);
 
-    &::first-letter {
+    & > span {
       color: lighten(#101318, 20%);
     }
   }
+
+  transition: color var(--night-mode-transition);
 }

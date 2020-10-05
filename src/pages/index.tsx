@@ -19,8 +19,8 @@ export default function IndexPage({ path }: PageProps) {
     return (
         <Layout path={path} centered>
             <SEO/>
-            <div className="px-8 py-4 rounded-lg">
-                <h1 className="text-5xl">Andrea Silvestroni</h1>
+            <div className="py-4 rounded-lg">
+                <h1>Andrea Silvestroni</h1>
                 <h2>Welcome to my page!</h2>
                 <div className="w-24 h-2 border-t-2 border-b-2 my-4 border-accent-700"/>
                 <div className="mb-4">
